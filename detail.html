@@ -6,10 +6,25 @@
     <title>Biodata & Detail - Project Pemrograman Web</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Tambahan style khusus untuk tabel biodata agar rapi */
+        /* Gaya khusus untuk foto profil */
+        .profile-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #4299e1;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling tabel biodata */
         .bio-table {
             width: 100%;
-            margin: 20px 0;
+            margin: 15px 0 25px 0;
             text-align: left;
             border-collapse: collapse;
         }
@@ -26,6 +41,38 @@
             color: #2d3748;
             font-weight: 500;
         }
+
+        /* Styling untuk tabel tambahan (misal: Jadwal Kuliah) */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        .data-table th {
+            background-color: #4299e1;
+            color: white;
+            text-align: center;
+            padding: 8px;
+        }
+        .data-table td {
+            padding: 8px 10px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        .data-table tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+
+        .section-title {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #2b6cb0;
+            border-left: 4px solid #4299e1;
+            padding-left: 8px;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -40,11 +87,17 @@
 
     <!-- Konten Utama Halaman Detail / Biodata -->
     <main class="container">
-        <section class="card" style="max-width: 550px;">
+        <section class="card" style="max-width: 600px;">
             <h1>Biodata Mahasiswa 👨‍💻</h1>
             <p>Berikut adalah informasi data diri dan perkuliahan:</p>
+
+            <!-- 1. Foto Profil -->
+            <div class="profile-container">
+    <!-- Pastikan nama file dan ekstensi (misal: .jpg, .jpeg, .png) sesuai dengan file Anda -->
+    <img src="fotowawhyu.JPEG" alt="Foto Profil Wahyu Saputro" class="profile-img">
+</div>
             
-            <!-- Tabel Biodata -->
+            <!-- 2. Tabel Biodata Utama -->
             <table class="bio-table">
                 <tr>
                     <img src="ryan.jpg" width="300" height="400">
@@ -66,8 +119,41 @@
                     <td>III</td>
                 </tr>
             </table>
+
+            <!-- 3. Tabel Tambahan (Jadwal / Nilai / Mata Kuliah) -->
+            <h3 class="section-title">Jadwal Perkuliahan</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Hari</th>
+                        <th>Mata Kuliah</th>
+                        <th>Jam</th>
+                        <th>Ruang</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Senin</td>
+                        <td>Pemrograman Web</td>
+                        <td>08:00 - 10:30</td>
+                        <td>Lab Komp 2</td>
+                    </tr>
+                    <tr>
+                        <td>Rabu</td>
+                        <td>Basis Data</td>
+                        <td>10:30 - 13:00</td>
+                        <td>R. 302</td>
+                    </tr>
+                    <tr>
+                        <td>Jumat</td>
+                        <td>Algoritma & Struktur Data</td>
+                        <td>13:30 - 16:00</td>
+                        <td>Lab Komp 1</td>
+                    </tr>
+                </tbody>
+            </table>
             
-            <!-- Tombol Kembali dengan ID agar bisa dikontrol JavaScript -->
+            <!-- Tombol Kembali -->
             <div style="margin-top: 25px;">
                 <button id="back-btn" class="btn">⬅️ Kembali ke Beranda</button>
             </div>
